@@ -2,9 +2,9 @@
 Использование функции генерации html кода хлебных крошек с микроразметкой
 
 ```php
-$links = []
-$links[] = array('name' => 'Страница 1', 'link' => '/page-1');
-$links[] = array('name' => 'Страница 2', 'link' => '/page-2');
-
-$breadcrumbs_html = breadcrumbs($links);
+$breadcrumbs = new Breadcrumbs($add_home_link = true);
+$breadcrumbs->addLink('Ссылка 1', '/link-1');
+$breadcrumbs->addLink('Ссылка 2', '/link-2');
+$breadcrumbs->addLink('Ссылка 3', '/link-3');
+$data['breadcrumbs_html'] = $breadcrumbs->getHtml();
 ```
