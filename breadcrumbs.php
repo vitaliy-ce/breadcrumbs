@@ -19,6 +19,18 @@ class Breadcrumbs {
 			'link' => trim($link),
 		];
 	}
+	
+	public function addLinks($links) {
+		if (!empty($links) && is_array($links)) {
+			foreach ($links as $link) {
+				if (empty($link['text'])) { continue; }
+				$this->links[] = [
+					'name' => trim($link['text']),
+					'link' => trim($link['href'] ?? ''),
+				];
+			}
+		}
+	}
 
 	public function getHtml() {
 		$html = '';
